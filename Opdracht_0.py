@@ -5,10 +5,8 @@ import itertools
 Maak een functie die twee vectoren bij elkaar optelt. De vectoren zijn Numpy arrays.
 """
 
-
 class DimensionError(Exception):
     pass
-
 
 def vector_addition(u: np.ndarray, v: np.ndarray) -> np.ndarray:
     summed_arrays = u.copy()
