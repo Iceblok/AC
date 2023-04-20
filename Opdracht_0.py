@@ -1,5 +1,4 @@
 import numpy as np
-import itertools
 
 """
 Maak een functie die twee vectoren bij elkaar optelt. De vectoren zijn Numpy arrays.
