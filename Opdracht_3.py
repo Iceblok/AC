@@ -12,18 +12,20 @@ class DimensionError(Exception):
 
 
 def inner_product(u: np.ndarray, v: np.ndarray) -> np.ndarray:
-    if len(u) != len(v):
+    """
+    Function returns the inner product of given Vectors
+    Example;
+    :param u: np.ndarray, np.array([12, -5])
+    :param v: np.ndarray, np.array([12, -5])
+    :return: result_inner_product: np.ndarray, np.array([169.])
+    """
+    if u.shape[0] != v.shape[0]:
         raise DimensionError("Vectors niet hetzelfde formaat")
-    if 0 not in zip(u, v):
-        innerproduct = np.zeros(1)
-        for i, item in enumerate(v):
-            innerproduct += u[i] * v[i]
-        return innerproduct
     else:
-        innerproduct = u.copy()
-        for i, item in enumerate(v):
-            innerproduct[i] = u[i] * v[i]
-        return innerproduct
+        result_inner_product = np.zeros(1)
+        for i in range(v.shape[0]):
+            result_inner_product[0] += u[i] * v[i]
+        return result_inner_product
 
 
-print(inner_product([12, -5], [12, -5]))
+print(inner_product(np.array([12, -5]), np.array([12, -5])))
